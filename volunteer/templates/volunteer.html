@@ -1,0 +1,185 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container" style="padding-top: 10px;">
+    <div class="row justify-content-center">
+        <div class="col-sm text-center">
+            {% if volunteer %}
+            <h1>{{ volunteer.first_name }} {{ volunteer.last_name }}</h1>
+            <div class="row justify-content-center">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Alt. Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Alt. Email</th>
+                            <th scope="col">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>{{ volunteer.phone }}</td>
+                        <td>{{ volunteer.alt_phone }}</td>
+                        <td>{{ volunteer.email }}</td>
+                        <td>{{ volunteer.alt_email }}</td>
+                        <td>{{ volunteer.street }} {{ volunteer.city }}, {{ volunteer.state }} {{ volunteer.zip_code }}</td>
+                    </tbody>
+                </table>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Shelter</div>
+                    <div class="card-body">
+                        {% if shelter_list %}
+                        <ul>
+                            {% for item in shelter_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Shelter Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Transit</div>
+                    <div class="card-body">
+                        {% if transit_list %}
+                        <ul>
+                            {% for item in transit_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Transit Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Donation</div>
+                    <div class="card-body">
+                        {% if donation_list %}
+                        <ul>
+                            {% for item in donation_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Donation Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Resettlement</div>
+                    <div class="card-body">
+                        {% if settle_list %}
+                        <ul>
+                            {% for item in settle_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Resettlement Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="padding-top: 10px;">
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Volunteering</div>
+                    <div class="card-body">
+                        {% if volunteering_list %}
+                        <ul>
+                            {% for item in volunteering_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Volunteering Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Professional</div>
+                    <div class="card-body">
+                        {% if professional_list %}
+                        <ul>
+                            {% for item in professional_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Professional Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Employment</div>
+                    <div class="card-body">
+                        {% if employment_list %}
+                        <ul>
+                            {% for item in employment_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Employment Resources</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-header">Additional Information</div>
+                    <div class="card-body">
+                        {% if custom_list %}
+                        <ul>
+                            {% for item in custom_list %}
+                            <li>{{item}}</li>
+                            
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <h2>No Additional Information</h2>
+                        
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        {% else %}
+            <h1>Volunteer Not Found</h1>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
+

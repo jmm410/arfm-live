@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container" style="padding-top: 10px;">
+    <div class="row justify-content-center">
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="row">
+                    <div class="card-body">
+                        <div class="card-title"><h2 class="text-center">Register</h2></div>
+                    </div>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 text-center">
+                        <label for="exampleFormControlInput1" class="form-label" style="margin-bottom: 0;"><h3>Email Address</h3></label>
+                        <input type="email" name="email" class="form-control"  id="exampleFormControlInput1" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 text-center">
+                        <label for="exampleFormControlInput1" class="form-label" style="margin-bottom: 0;"><h3>Username</h3></label>
+                        <input type="text" name="username" class="form-control"  id="exampleFormControlInput1" placeholder="Username" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="padding-top: 8px;">
+                    <div class="col-sm-6 text-center">
+                        <label for="inputPassword5" class="form-label" style="margin-bottom: 1px;"><h3>Password</h3></label>
+                        <input type="password" name="password1" id="inputPassword5" class="form-control" placeholder="Enter Password" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="padding-top: 8px;">
+                    <div class="col-sm-6 text-center">
+                        <label for="inputPassword5" class="form-label" style="margin-bottom: 1px;"><h3>Confirm Password</h3></label>
+                        <input type="password" name="password2" id="inputPassword5" class="form-control" placeholder="Enter Password" required>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="padding-top: 15px;">
+                    <div class="col-sm-6 text-center">
+                        <button type="submit" class="btn btn-secondary mb-5" style="width: 100%;">Register</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

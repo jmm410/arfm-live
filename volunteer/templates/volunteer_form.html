@@ -1,0 +1,324 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="post">
+        <div class="col-md-12">
+          {% if messages %}
+          <div class="row justify-content-center text-center">
+              {% for message in messages %}
+                <p>{{message}}</p>
+              {% endfor %}
+          </div>
+          {% endif %}
+            {% csrf_token %}
+            <div class="row justify-content-center" style="padding-top: 10px;">
+                <div class="form-group col-md-6 text-center">
+                    <label for="{{ volunteer_form.first_name.id_for_label }}">First Name</label>
+                    {{ volunteer_form.first_name }}
+                </div>
+                <div class="form-group col-md-6 text-center">
+                    <label for="{{ volunteer_form.last_name.id_for_label }}">Last Name</label>
+                    {{ volunteer_form.last_name }}
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 10px;">
+                <div class="form-group col-md-6 text-center">
+                    <label for="{{ volunteer_form.phone.id_for_label }}">Phone</label>
+                    {{ volunteer_form.phone }}
+                </div>
+                <div class="form-group col-md-6 text-center">
+                    <label for="{{ volunteer_form.alt_phone.id_for_label }}">Alt. Phone</label>
+                    {{ volunteer_form.alt_phone }}
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 10px;">
+                <div class="form-group col-md-6 text-center">
+                    <label for="{{ volunteer_form.email.id_for_label }}">Email</label>
+                    {{ volunteer_form.email }}
+                </div>
+                <div class="form-group col-md-6 text-center">
+                    <label for="{{ volunteer_form.alt_email.id_for_label }}">Alt. Email</label>
+                    {{ volunteer_form.alt_email }}
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 10px;">
+                <div class="form-group col-md-4 text-center">
+                    <label for="{{ volunteer_form.street.id_for_label }}">Street Address</label>
+                    {{ volunteer_form.street }}
+                </div>
+                <div class="form-group col-md-2 text-center">
+                    <label for="{{ volunteer_form.city.id_for_label }}">City</label>
+                    {{ volunteer_form.city }}
+                </div>
+                <div class="form-group col-md-2 text-center">
+                    <label for="{{ volunteer_form.state.id_for_label }}">State</label>
+                    {{ volunteer_form.state }}
+                </div>
+                <div class="form-group col-md-2 text-center">
+                    <label for="{{ volunteer_form.zip_code.id_for_label }}">Zip Code</label>
+                    {{ volunteer_form.zip_code }}
+                </div>
+                <div class="form-group col-md-2 text-center">
+                    <label for="{{ volunteer_form.local.id_for_label }}">Local</label>
+                    <div class="d-flex justify-content-center">
+                        {{ volunteer_form.local }}
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 10px;">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Shelter</div>
+                        <div class="card-body">
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_small.id_for_label }}">Host One or Two People</label>
+                                {{ volunteer_form.host_small }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_large.id_for_label }}">Host Small Group or Family</label>
+                                {{ volunteer_form.host_large }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_long_term.id_for_label }}">Long Term Hosting</label>
+                                {{ volunteer_form.host_long_term }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_children.id_for_label }}">Children Welcome</label>
+                                {{ volunteer_form.host_children }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_pets.id_for_label }}">Pets Welcome</label>
+                                {{ volunteer_form.host_pets }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_disable.id_for_label }}">Disability Accessible</label>
+                                {{ volunteer_form.host_disable }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_smoke.id_for_label }}">Drug or Smoke Friendly</label>
+                                {{ volunteer_form.host_smoke }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_mobile_accomodation.id_for_label }}">Car Living Amenities</label>
+                                {{ volunteer_form.host_mobile_accomodation }}
+                            </div>
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.host_religious_kitchen.id_for_label }}">Kosher or Halal Kitchen</label>
+                                {{ volunteer_form.host_religious_kitchen }}
+                            </div>
+                            <div class="form-group text-center">
+                                <label for="{{ volunteer_form.host_comment.id_for_label }}">Shelter Comment</label>
+                                {{ volunteer_form.host_comment }}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Transportation</div>
+                        <div class="card-body">
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.transport_station.id_for_label }}">Airport/Station Ride or Pickup</label>
+                                {{ volunteer_form.transport_station }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_local.id_for_label }}">Drive to Local Destination</label>
+                                {{ volunteer_form.transport_local }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_pay_for_ride.id_for_label }}">Pay for Rideshare</label>
+                                {{ volunteer_form.transport_pay_for_ride }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_pay_for_public.id_for_label }}">Pay for Public Transit</label>
+                                {{ volunteer_form.transport_pay_for_public }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_advice_for_public.id_for_label }}">Public Transit Advice</label>
+                                {{ volunteer_form.transport_advice_for_public }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_loan_bike.id_for_label }}">Lend Bike</label>
+                                {{ volunteer_form.transport_loan_bike }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_loan_car.id_for_label }}">Lend Car</label>
+                                {{ volunteer_form.transport_loan_car }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.transport_moving_vehicle.id_for_label }}">Moving Vehicle</label>
+                                {{ volunteer_form.transport_moving_vehicle }}
+                              </div>
+                              <div class="form-group text-center">
+                                <label for="{{ volunteer_form.transport_comment.id_for_label }}">Transportation Comment</label>
+                                {{ volunteer_form.transport_comment }}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Donations</div>
+                        <div class="card-body">
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.donation_groceries.id_for_label }}">Groceries or Meal</label>
+                                {{ volunteer_form.donation_groceries }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.donation_hygiene.id_for_label }}">Hygiene Products</label>
+                                {{ volunteer_form.donation_hygiene }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.donation_household.id_for_label }}">Household Products</label>
+                                {{ volunteer_form.donation_household }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.donation_baby_item.id_for_label }}">Baby Items</label>
+                                {{ volunteer_form.donation_baby_item }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.donation_gift_card.id_for_label }}">Gift Cards</label>
+                                {{ volunteer_form.donation_gift_card }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.donation_winter_items.id_for_label }}">Winter Items</label>
+                                {{ volunteer_form.donation_winter_items }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.donation_affirming_clothes.id_for_label }}">Gender Affiming Clothes</label>
+                                {{ volunteer_form.donation_affirming_clothes }}
+                              </div>
+                              <div class="form-group text-center">
+                                <label for="{{ volunteer_form.donation_custom.id_for_label }}">Donation Other</label>
+                                {{ volunteer_form.donation_custom }}
+                              </div>
+                              <div class="form-group text-center">
+                                <label for="{{ volunteer_form.donation_comment.id_for_label }}">Donation Comment</label>
+                                {{ volunteer_form.donation_comment }}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Settling</div>
+                        <div class="card-body">
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.settle_orient_to_city.id_for_label }}">Orient to City</label>
+                                {{ volunteer_form.settle_orient_to_city }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_orient_to_local_community.id_for_label }}">Orient to Local LGBTQ Community</label>
+                                {{ volunteer_form.settle_orient_to_local_community }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_find_healthcare.id_for_label }}">Referral to LGBTQ Healthcare</label>
+                                {{ volunteer_form.settle_find_healthcare }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_parental_support.id_for_label }}">Parent-to-Parent Support</label>
+                                {{ volunteer_form.settle_parental_support }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_childcare.id_for_label }}">Childcare</label>
+                                {{ volunteer_form.settle_childcare }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_foster_pet.id_for_label }}">Foster Pet</label>
+                                {{ volunteer_form.settle_foster_pet }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_disability_connections.id_for_label }}">Disability Connections</label>
+                                {{ volunteer_form.settle_disability_connections }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_religious_connections.id_for_label }}">Religious Connections</label>
+                                {{ volunteer_form.settle_religious_connections }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.settle_language_translation.id_for_label }}">Language Translation</label>
+                                {{ volunteer_form.settle_language_translation }}
+                              </div>
+                              <div class="form-group text-center">
+                                <label for="{{ volunteer_form.settle_custom.id_for_label }}">Settling Other</label>
+                                {{ volunteer_form.settle_custom }}
+                              </div>
+                              <div class="form-group text-center">
+                                <label for="{{ volunteer_form.settle_comment.id_for_label }}">Settling Comment</label>
+                                {{ volunteer_form.settle_comment }}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Volunteering</div>
+                        <div class="card-body">
+                            <div class="form-check">
+                                <label for="{{ volunteer_form.volunteering_administrative.id_for_label }}">Administrative Services</label>
+                                {{ volunteer_form.volunteering_administrative }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.volunteering_data_entry.id_for_label }}">Data Entry</label>
+                                {{ volunteer_form.volunteering_data_entry }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.volunteering_organizer.id_for_label }}">Organization</label>
+                                {{ volunteer_form.volunteering_organizer }}
+                              </div>
+                              <div class="form-check">
+                                <label for="{{ volunteer_form.volunteering_money_donation.id_for_label }}">Financial Donation</label>
+                                {{ volunteer_form.volunteering_money_donation }}
+                              </div>
+                              <div class="form-group text-center">
+                                <label for="{{ volunteer_form.volunteering_custom.id_for_label }}">Volunteer Other</label>
+                                {{ volunteer_form.volunteering_custom }}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Professional Services</div>
+                        <div class="card-body">
+                              <div class="form-group text-center"><label for="{{ volunteer_form.additional_professional.id_for_label }}">Services</label>
+                                {{ volunteer_form.additional_professional }}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Employment Services</div>
+                        <div class="card-body">
+                              <div class="form-group text-center"><label for="{{ volunteer_form.additional_employment.id_for_label }}">Services</label>
+                                {{ volunteer_form.additional_employment }}
+                              </div>
+                              
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card h-100">
+                      <div class="card-header text-center">Additional Comments</div>
+                      <div class="card-body">
+                        <div class="form-group text-center">
+                            <div class="form-group text-center"><label for="{{ volunteer_form.additional_custom.id_for_label }}">Comments</label>
+                              {{ volunteer_form.additional_custom }}
+                        </div>
+                            
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 10px;">
+                <div class="col-md-12"><button type="submit" class="btn btn-secondary btn-lg" style="width: 100%;">Add Volunteer</button></div>
+              </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
